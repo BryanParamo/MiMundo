@@ -1,0 +1,94 @@
+/* variables */
+:root {
+    --blanco: #FFFFFF;
+    --gris: #868890;
+    --negro: #000000;
+    --texto: #3C3C3C;
+    --base: #eeeeee;
+    --naranja: #FFA16C;
+    --cianOscuro: #008b8b;
+    --sombra: #60609f33;
+
+    --slabo13: "Slabo 13px", serif;
+}
+
+/* globales */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--base);
+    font-family: var(--slabo13);
+    font-size: 1.8rem;
+    height: 100vh;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 1.8rem
+}
+
+/* contenedor */
+.contenedor {
+    max-width: calc(100vw - 7rem);
+    margin-left: 7rem;
+}
+
+/* ----> imagen principal */
+.imagen__principal {
+    height: 20rem;
+    background-image: url(../img/ropita1.jpg);
+    background-size: cover;
+    background-position: center top;
+}
+
+/* titulo */
+.titulo {
+    display: flex;
+    height: 10rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo__nombre {
+    font-size: 5rem;
+}
+
+/* ----> boton agregar (admin) */
+.agregar {
+    margin: 2rem;
+}
+
+.agregar__boton {
+    background-color: var(--cianOscuro);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agregar__boton:hover {
+    background-color: var(--blanco);
+    color: var(--cianOscuro);
+}

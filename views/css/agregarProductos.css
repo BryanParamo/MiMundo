@@ -1,0 +1,115 @@
+/* agregar productos */
+.subir-producto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.subir-producto__img {
+    width: 100%;
+    border-radius: 4rem;
+}
+
+.subir-producto__formulario {
+    text-align: center;
+    background: var(--cianOscuro);
+    border-radius: 4rem;
+    color: var(--blanco);
+}
+
+.subir-producto__formulario h2{
+    margin-top: 3rem;
+    font-weight: 300;
+    font-size: 3.5rem;
+}
+
+form{
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    text-align: start;
+}
+
+form div:first-child{
+    grid-column: 1/3;
+}
+
+form div:last-child{
+    grid-column: 1/3;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+}
+
+form div label{
+    font-size: 2rem;
+    margin-bottom: .2rem;
+}
+
+form div input{
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+}
+
+form div select{
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: 1.5rem;
+}
+
+form div button{
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    color: var(--cianOscuro);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Validaciones formulario */
+.mensajeInf {
+    display: flex;
+    text-align: start;
+    font-weight: lighter;
+    color: rgb(255, 166, 166);
+    display: none;
+}
+
+form input:invalid{
+    .mensajeInf{
+        display: block;
+    }
+}
+
+form input:valid{
+    .mensajeInf{
+        display: none;
+    }
+}
+
+/* form.validado input:invalid, .novalido{
+    border-color: red;
+} */
+
+
+
+/* ojito */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    cursor: pointer;
+}
+

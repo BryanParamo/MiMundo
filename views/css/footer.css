@@ -1,0 +1,17 @@
+/* ----> footer */
+.footer {
+    width: 100%;
+    height: 6rem;
+    background-color: var(--negro);
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.5s ease;
+}
+
+.footer__reducido {
+    display: flex;
+    width: 75%;
+    transition: width 0.5s ease;
+}

@@ -1,0 +1,41 @@
+.contenedor__formulario{
+    padding: 1rem;
+}
+
+.formulario{
+    padding: 1rem;
+    background-color: var(--cianOscuro);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formulario__mensajes{
+    height: 20rem;
+    background-color: var(--blanco);
+    border: 2px solid var(--gris);
+    border-radius: 2rem;
+    overflow: auto;
+}
+
+.formulario__input-boton{
+    display: flex;
+}
+
+.formulario__input{
+    height: 4rem;
+    width: 90%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.formulario__boton{
+    width: 10%;
+    border: none;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
