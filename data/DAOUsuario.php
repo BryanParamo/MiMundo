@@ -223,29 +223,49 @@ class DAOUsuario
 	/**
      * Agrega un nuevo usuario de acuerdo al objeto recibido como parámetro
      */
-    public function agregar(Usuario $obj) {
-        $clave = 0;
-        try {
-            $sql = "INSERT INTO usuarios (nombre, apellido1, apellido2, email, genero, contrasenia, rol) VALUES (:nombre, :apellido1, :apellido2, :email, :genero, sha224(:contrasenia), :rol)";
+    public function agregar(Usuario $obj)
+	{
+        $clave=0;
+		try 
+		{
+            $sql = "INSERT INTO Usuarios
+                (nombre,
+                apellido1,
+                apellido2,
+                email,
+                genero,
+                contrasenia)
+                VALUES
+                (:nombre,
+                :apellido1,
+                :apellido2,
+                :email,
+                :genero,
+                sha224(:contrasenia));";
+                
             $this->conectar();
             $this->conexion->prepare($sql)
-                ->execute(array(
-                    ':nombre' => $obj->nombre,
-                    ':apellido1' => $obj->apellido1,
-                    ':apellido2' => $obj->apellido2,
-                    ':email' => $obj->email,
-                    ':genero' => $obj->genero,
-                    ':contrasenia' => $obj->contrasenia,
-                    ':rol' => $obj->rol // Usa el rol proporcionado
-                ));
-            $clave = $this->conexion->lastInsertId();
+                 ->execute(array(
+                    ':nombre'=>$obj->nombre,
+                 ':apellido1'=>$obj->apellido1,
+                 
+                 ':email'=>$obj->email,
+                 ':genero'=>$obj->genero,
+                 //':telefono'=>$obj->telefono,
+                 ':apellido2'=>$obj->apellido2,
+                 ':contrasenia'=>$obj->contrasenia));
+                 
+            $clave=$this->conexion->lastInsertId();
             return $clave;
-        } catch (Exception $e) {
-            return $clave;
-        } finally {
+		} catch (Exception $e){
+			return $clave;
+		}finally{
+            
+            /*En caso de que se necesite manejar transacciones, 
+			no deberá desconectarse mientras la transacción deba 
+			persistir*/
+            
             Conexion::desconectar();
         }
-    }
-    
+	}
 }
-?>

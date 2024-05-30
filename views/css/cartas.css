@@ -93,9 +93,26 @@
 
 }
 
-.carta__apartar:hover {
+.carta__eliminar {
+    background-color: var(--cianOscuro);
+    border: 1px solid var(--cianOscuro);
+    border-radius: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Slabo 13px", serif;
+    font-size: 1.8rem;
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.carta__apartar:hover, .carta__eliminar:hover {
     background-color: var(--blanco);
     color: var(--cianOscuro);
+    border: 1px solid var(--cianOscuro);
 }
 
 .carta__botones {

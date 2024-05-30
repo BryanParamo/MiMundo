@@ -22,6 +22,26 @@
 
     // header
     require('../components/header.php');
+
+    // Obtenemos el DAO
+    require_once("../../data/DAOProducto.php");
+
+    // Revisamos si llega un id que indica que se quiere eliminar un elemento
+    if (isset($_POST["idProducto"]) && is_numeric($_POST["idProducto"])) {
+
+        // Relizamos una instancia del DAO
+        $dao = new DAOProducto();
+
+        // Se realiza la condicio para eliminar
+        if ($dao->eliminar($_POST["idProducto"])) {
+            echo "Eliminado";
+            //$_SESSION["msg"]="alert-success--Usuario eliminado exitósamente";
+        } else {
+            echo "No Eliminado";
+            //$_SESSION["msg"]="alert-danger--No se ha podido eliminar al usuario seleccionado debido a que tiene procesos relacionados";
+        }
+    }
+
     ?>
 
     <!-- imagen principal -->
@@ -77,11 +97,11 @@
                 </div> -->
 
                 <?php
-                    require_once("../../data/DAOProducto.php");
-                    
-                    $lista = (new DAOProducto())->obtenerTodos();
-                    foreach ($lista as $producto) {
-                        echo "<div class=\"carta\">
+                require_once("../../data/DAOProducto.php");
+
+                $lista = (new DAOProducto())->obtenerTodos();
+                foreach ($lista as $producto) {
+                    echo "<div class=\"carta\">
 
                                 <div>
                                     <img class=\"carta__imagen\" src=\"../img/ropita1.jpg\" alt=\"ropa infantil\">
@@ -105,23 +125,28 @@
                                     </div>
 
                                     <div>   
-                                        <a class=\"carta__apartar\" href=\"\">
+                                        <a class=\"carta__apartar\" href=\"agregarProductoAdmin.php?idProducto=$producto->idProducto\">
                                             <ion-icon class=\"link__icono link__icono__ch \" name=\"cube-outline\"></ion-icon>
                                             Editar
                                         </a>
                                     </div>
 
                                     <div>
-                                        <a class=\"carta__apartar\" href=\"\">
-                                            <ion-icon class=\"link__icono link__icono__ch \" name=\"cube-outline\"></ion-icon>
-                                            Eliminar
-                                        </a>
+
+                                        <form method='post' action='indexAdmin.php'>
+                                            <input type='hidden' name='idProducto' value='$producto->idProducto'>
+                                            <button type='submit' class='carta__eliminar' name='$producto->idProducto' id='btnEliminar'>
+                                                <ion-icon class='link__icono link__icono__ch' name='cube-outline'></ion-icon>
+                                                Eliminar
+                                            </button>
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>";
-                    }
+                }
                 ?>
-                
+
         </section>
     </main>
 

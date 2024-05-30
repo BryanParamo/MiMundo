@@ -1,4 +1,4 @@
-
+//alert("Holas")
 /* function validacionKeyUp(element){
     txt = element.target;
 }  */

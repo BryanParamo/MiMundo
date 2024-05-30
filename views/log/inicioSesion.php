@@ -80,7 +80,7 @@
                                 <span id="span"><ion-icon name="eye-outline"></ion-icon></span>
                             </button>
                         </div>
-                        <p class="mensajeInf">Ingresa la contraseña</p>
+                        <p class="mensajeInf">Ingresa contraseña mayor a 8 digitos</p>
 
                     </div>
 

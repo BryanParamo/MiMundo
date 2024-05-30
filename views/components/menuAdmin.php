@@ -65,7 +65,6 @@
                     <span class="link__span">Nosotros</span>
                 </a>
             </li>
-            <!-- ------------------------------------- -->
             <li class="nav__item">
                 <a class="link" href="usuariosAdmin.php">
                     <ion-icon class="link__icono" name="Person-outline"></ion-icon>

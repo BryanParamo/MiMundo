@@ -26,7 +26,7 @@
                     <div>
                         <input type="text" placeholder="Sexo">
                     </div>
-                    <a href="../index.php" class="btn gradient-text">Crear Cuenta</a>
+                    <a href="index.html" class="btn gradient-text">Crear Cuenta</a>
                 </form>
                 <p>Ya tienes cuenta? <a href="inicioSesion.php" class="gradient-text">Iniciar Sesion</a></p>
             </div>

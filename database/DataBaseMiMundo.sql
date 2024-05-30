@@ -29,8 +29,12 @@ select * from usuarios;
 
 
 -- Tabla de productos
-CREATE TYPE tipoCategoria AS ENUM ('sueter', 'camisa', 'blusa', 'vestido', 'pantalon', 'short');
-CREATE TYPE tipoTemporada AS ENUM ('primavera', 'verano', 'otoño', 'invierno');
+drop table productos;
+DROP TYPE tipoCategoria;
+DROP TYPE tipoTemporada;
+
+CREATE TYPE tipoCategoria AS ENUM ('Sueter', 'Camisa', 'Blusa', 'Vestido', 'Pantalon', 'Short');
+CREATE TYPE tipoTemporada AS ENUM ('Primavera', 'Verano', 'Otoño', 'Invierno');
 
 Create table productos(
 	idProducto serial not null primary key,
@@ -42,22 +46,22 @@ Create table productos(
 )
 
 insert into productos
-values (default, 'Camisa Azul', '3M', 150, 'camisa', 'primavera' );
+values (default, 'Camisa Azul', '3M', 150, 'Camisa', 'Primavera' );
 
 insert into productos
-values (default, 'Sueter Verde', '9M', 250, 'sueter', 'invierno' );
+values (default, 'Sueter Verde', '9M', 250, 'Sueter', 'Invierno' );
 
 insert into productos
-values (default, 'Pantalon Negro', 'T4', 300, 'pantalon', 'otoño' );
+values (default, 'Pantalon Negro', 'T4', 300, 'Pantalon', 'Otoño' );
 
 insert into productos
-values (default, 'Vestido Naranja', 'T2', 150, 'vestido', 'verano' );
+values (default, 'Vestido Naranja', 'T2', 150, 'Vestido', 'Verano' );
 
 insert into productos
-values (default, 'Short Cafe', '6M', 150, 'short', 'verano' );
+values (default, 'Short Cafe', '6M', 150, 'Short', 'Verano' );
 
 insert into productos
-values (default, 'Camisa Formal Rosa', 'T4', 300, 'camisa', 'primavera' );
+values (default, 'Camisa Formal Rosa', 'T4', 300, 'Camisa', 'Primavera' );
 
 SELECT idProducto,producto,talla,precio,categoria,temporada FROM productos;
 

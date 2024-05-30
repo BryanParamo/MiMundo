@@ -67,7 +67,6 @@
                     <span class="link__span">Nosotros</span>
                 </a>
             </li>
-            
         </ul>
     </nav>
 

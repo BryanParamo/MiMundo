@@ -76,8 +76,8 @@ class DAOProducto
             $fila = $sentenciaSQL->fetch(PDO::FETCH_OBJ);
 
             $obj = new Producto();
-
-            $obj->idProducto = $fila->idProducto;
+            
+            $obj->idProducto = $fila->idproducto;
             $obj->producto = $fila->producto;
             $obj->talla = $fila->talla;
             $obj->precio = $fila->precio;
@@ -131,7 +131,8 @@ class DAOProducto
                     $obj->talla,
                     $obj->precio,
                     $obj->categoria,
-                    $obj->temporada
+                    $obj->temporada,
+                    $obj->idProducto
                 )
             );
             return true;
@@ -148,7 +149,7 @@ class DAOProducto
         $clave = 0;
         try {
             $sql = "INSERT INTO Productos (producto, talla, precio, categoria, temporada)
-                    VALUES (':producto, :talla, :precio, :categoria, :temporada);";
+                    VALUES (:producto, :talla, :precio, :categoria, :temporada);";
 
             $this->conectar();
             $this->conexion->prepare($sql)
@@ -163,7 +164,7 @@ class DAOProducto
             $clave = $this->conexion->lastInsertId();
             return $clave;
         } catch (Exception $e) {
-            var_dump($e);
+            var_dump($e->getMessage());
             return $clave;
         } finally {
 
